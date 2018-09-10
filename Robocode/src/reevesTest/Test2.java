@@ -1,4 +1,12 @@
-package crrb;
+package reevesTest;
+
+import robocode.AdvancedRobot;
+import robocode.HitByBulletEvent;
+import robocode.ScannedRobotEvent;
+
+import java.awt.*;
+
+
 
 /**
  * Copyright (c) 2001-2017 Mathew A. Nelson and Robocode contributors
@@ -8,12 +16,7 @@ package crrb;
  * http://robocode.sourceforge.net/license/epl-v10.html
  */
 
-import robocode.AdvancedRobot;
-import robocode.HitByBulletEvent;
-import robocode.AdvancedRobot;
-import robocode.ScannedRobotEvent;
 
-import java.awt.*;
 
 
 /**
@@ -28,19 +31,19 @@ import java.awt.*;
  * @author Stefan Westen (original SGSample)
  * @author Pavel Savara (contributor)
  */
-public class Test extends AdvancedRobot {
+public class Test2 extends AdvancedRobot {
 
     /**
      * PaintingRobot's run method - Seesaw
      */
     public void run() {
         while (true)
-            ahead(100);
-            turnGunRight(360);
-            back(100);
-            turnGunRight(360);
-        }
+        ahead(300);
+        turnGunRight(360);
+        back(300);
+        turnGunRight(360);
     }
+}
 
     /**
      * Fire when we see a robot
@@ -86,3 +89,4 @@ public class Test extends AdvancedRobot {
         g.fillOval((int) (getX() - 60), (int) (getY() - 60), 120, 120);
     }
 }
+
