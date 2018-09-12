@@ -37,13 +37,14 @@ public class Test2 extends AdvancedRobot {
      * PaintingRobot's run method - Seesaw
      */
     public void run() {
-        while (true)
-        ahead(300);
-        turnGunRight(360);
-        back(300);
-        turnGunRight(360);
+        while (true) {
+            ahead(300);
+            turnGunRight(360);
+            back(300);
+            turnGunRight(360);
+        }
     }
-}
+
 
     /**
      * Fire when we see a robot

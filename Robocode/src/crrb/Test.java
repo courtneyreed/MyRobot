@@ -1,32 +1,11 @@
 package crrb;
 
-/**
- * Copyright (c) 2001-2017 Mathew A. Nelson and Robocode contributors
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://robocode.sourceforge.net/license/epl-v10.html
- */
-
-import robocode.AdvancedRobot;
-import robocode.HitByBulletEvent;
-import robocode.AdvancedRobot;
-import robocode.ScannedRobotEvent;
-
 import java.awt.*;
-
+import robocode.*;
+import robocode.Robot;
 
 /**
- * PaintingRobot - a sample robot that demonstrates the onPaint() and
- * getGraphics() methods.
- * Also demonstrate feature of debugging properties on RobotDialog
- * <p/>
- * Moves in a seesaw motion, and spins the gun around at each end.
- * When painting is enabled for this robot, a red circle will be painted
- * around this robot.
- *
- * @author Stefan Westen (original SGSample)
- * @author Pavel Savara (contributor)
+ * Created by eahscs on 9/12/2018.
  */
 public class Test extends AdvancedRobot {
 
@@ -34,10 +13,12 @@ public class Test extends AdvancedRobot {
      * PaintingRobot's run method - Seesaw
      */
     public void run() {
-        while (true)
-            ahead(100);
-            setTurnGunRightRadians(Math.PI);
-            setTurnRadarLeftRadians(Math.PI);
+        while (true) {
+            setAdjustGunForRobotTurn(true);
+            setAdjustRadarForGunTurn(true);
+            setAdjustGunForRobotTurn(true);
+            setTurnGunLeftRadians(Math.PI);
+            setTurnRadarRightRadians(Math.PI);
             execute();
         }
     }
@@ -47,9 +28,15 @@ public class Test extends AdvancedRobot {
      */
     public void onScannedRobot(ScannedRobotEvent e) {
         // demonstrate feature of debugging properties on RobotDialog
-        setDebugProperty("lastScannedRobot", e.getName() + " at " + e.getBearing() + " degrees at time " + getTime());
+        if (e.getDistance() < 50 && getEnergy() > 50) {
+            fire(3);
+        }
+        else {
+            fire(1);
+        }
 
-        fire(1);
+        scan();
+        execute();
     }
 
     /**
