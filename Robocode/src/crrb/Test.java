@@ -8,17 +8,22 @@ import robocode.Robot;
  * Created by eahscs on 9/12/2018.
  */
 public class Test extends AdvancedRobot {
-
+    int dir=1;
     /**
      * PaintingRobot's run method - Seesaw
      */
     public void run() {
         while (true) {
-            setAdjustGunForRobotTurn(true);
-            setAdjustRadarForGunTurn(true);
-            setAdjustGunForRobotTurn(true);
-            setTurnGunLeftRadians(Math.PI);
-            setTurnRadarRightRadians(Math.PI);
+            ahead(300);
+            turnGunRight(360);
+            back(300);
+            turnGunLeft(360);
+            //setAdjustGunForRobotTurn(true);
+            //setAdjustRadarForGunTurn(true);
+            //setAdjustGunForRobotTurn(true);
+            //setTurnGunLeftRadians(Math.PI);
+            turnRadarRightRadians(Double.POSITIVE_INFINITY);
+            turnRadarRightRadians(Double.POSITIVE_INFINITY);
             execute();
         }
     }
@@ -27,7 +32,8 @@ public class Test extends AdvancedRobot {
      * Fire when we see a robot
      */
     public void onScannedRobot(ScannedRobotEvent e) {
-        // demonstrate feature of debugging properties on RobotDialog
+        //demonstrate feature of debugging properties on RobotDialog
+        //setTurnRadarLeftRadians(getRadarTurnRemainingRadians());
         if (e.getDistance() < 50 && getEnergy() > 50) {
             fire(3);
         }
@@ -37,6 +43,9 @@ public class Test extends AdvancedRobot {
 
         scan();
         execute();
+
+
+
     }
 
     /**
