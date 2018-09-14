@@ -37,7 +37,7 @@ public class Tracker extends Robot {
 	public void run() {
 		// Set colors
 		setBodyColor(new Color(128, 128, 50));
-		setGunColor(new Color(50, 50, 20));
+		setGunColor(new Color(197, 62, 181));
 		setRadarColor(new Color(200, 200, 70));
 		setScanColor(Color.white);
 		setBulletColor(Color.blue);

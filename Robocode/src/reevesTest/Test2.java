@@ -38,9 +38,9 @@ public class Test2 extends AdvancedRobot {
      */
     public void run() {
         while (true) {
-            ahead(300);
+            ahead(150);
             turnGunRight(360);
-            back(300);
+            back(150);
             turnGunRight(360);
         }
     }
@@ -77,7 +77,10 @@ public class Test2 extends AdvancedRobot {
         g.drawOval((int) (getX() - 59), (int) (getY() - 59), 118, 118);
         g.drawOval((int) (getX() - 60), (int) (getY() - 60), 120, 120);
 
-        turnLeft(90 - e.getBearing());
+        fire(1);
+        turnLeft(Math.random(90));
+        ahead(Math.random(200));
+
     }
 
     /**
