@@ -78,8 +78,8 @@ public class Test2 extends AdvancedRobot {
         g.drawOval((int) (getX() - 60), (int) (getY() - 60), 120, 120);
 
         fire(1);
-        turnLeft(Math.random(90));
-        ahead(Math.random(200));
+        //turnLeft(Math.random()*90);
+        //ahead(Math.random()*200);
 
     }
 
